@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Check top 10 similary people in simsons tv series</h2>
+
+
+    <form method="post" enctype="multipart/form-data" action="predictMPG">
+        {% csrf_token %}
+        <div class="col-md-4 col-sm-4"><label for="fname">Type somthing related to simsons:</label> </div> <input name="cylinderVal"
+            type="text" value={{temp.cylinders}}><br><br>
+
+        <br>
+        <input type="submit" value="Submit" ></div> 
+    </form>
+    {%  if topsimilar  %}
+    <h2>Top 10 similar meaning from {{cylinderVal}} are :</h2>
+    {%for item in topsimilar%}
+    <p>{{item}}</p>
+    {% endfor %}
+    {% endif %}
+
+
+</body>
+
+</html>
